@@ -1,0 +1,10 @@
+.idea/*
+gruntfile.js
+bower.json
+package-lock.json
+package.json
+js/*
+lib/*
+plugin/*
+css/*
+
