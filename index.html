@@ -1,14 +1,16 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script type="text/javascript" src="js/dygraph.min.js"></script>
+		<link rel="stylesheet" href="css/dygraph.css" />
 
 		<title>reveal.js</title>
 
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/monokai.css">
@@ -21,15 +23,484 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+		<style>
+			.dygraph-legend {
+				font-size: 0.75em;
+				background: rgba(255, 255, 255, 1.0);
+				color: black;
+			}
+			.reveal img {
+				max-width: none !important;
+				max-height: none !important;
+			}
+		</style>
+
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+
+					<!--
+
+Medha Tare - Learner Variability Project : Senior Research Scientist
+Alison Snell - Learner Variability Project : Research Scientist
+Kacey Baker - Director of People
+Jonathan Pitman - Learning Sciences Research : Project Manager
+Ryan Forman - Learning Sciences Research : Financial Manager
+Andy Krumm  - Learning Sciences Research : Director, Learning Analytics Research
+Viki Young - Senior Research Director
+Colin Angevine - Challenge Collaboratives : Project Director
+Donnaraé Wade - Education Networks : Implementation Manager
+
+1. Background
+2. Dissertation
+3. SDP Capstone & ELK Stack Stuff
+4. FCPS Dashboard
+5. Roxy's Dissertation
+
+
+
+
+					-->
+
+					<h2>Why?</h2>
+					<h3>An Unexpected Journey</h3><br>
+					<h4><a href="https://github.com/wbuchanan" target="_blank">William R. Buchanan, Ph.D.</a></h4>
+				</section>
+				<section>
+					<section data-autoslide="5000">
+						<h3>Outline</h3>
+					</section>
+					<section>
+						<ul>
+							<li>My Background</li>
+							<li>Research, Project, and Study Examples</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Explain why I am approaching the job talk in this way...</li>
+								<li>I want to share examples that demonstrate the breadth of skills, qualifications, and duties described in the job description.</li>
+								<li>Dissertation - to provide an example of how I've used econometrics and experience working with large-scale education databases</li>
+								<li>Meta matters - an example of using process data and multi-level models.</li>
+								<li>FCPS work - to show example of how I've developed a team and support improvement science efforts & ML</li>
+								<li>If there is time - Roxy's dissertation - example of work in progress that uses multi-level models and more sophisticated analytic approaches</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+
+				<!-- Background -->
+				<section data-autoslide="3000">
+					<h2>My Background</h2>
+				</section>
+				<section class="center">
+					<section class="center">
+						<img class="center" src="img/growingUp.png" style="width: 75vw !important; height: 85vh !important;"
+						alt="Imaging showing where I grew up in Providence, RI.  The image includes markers to denote the location of the Providence Public Schools Department's central office, Classical High School, Central High School, approximate location of my bedroom window as a child, and marker denoting the location where a student was murdered on September 5th, 2018.">
+						<aside class="notes">
+							<ul>
+								<li>Explain disparity between Central and Classical.</li>
+								<li>Low-income community/school district</li>
+								<li>Not only first gen college student, but only one of my aunts/uncles graduated high school</li>
+								<li>In the system, I was identified as a student "Known to the at-risk team" at 6 years old.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Educational Background</h3>
+						<ul>
+							<li>B.M. in Jazz Composition, 2006 - Berklee College of Music (Boston, MA)</li>
+							<li>M.A.Ed in Teaching and Instruction, 2008 - TUI University (Cypress, CA)</li>
+							<li>A.M. in Urban Education Policy, 2010 - Brown University (Providence, RI)</li>
+							<li>Ph.D. in K-12 Educational Leadership, 2011 - TUI University (Cypress, CA)</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Preview how the Jazz Comp degree is instrumental in research work</li>
+								<li>Can also discuss learning about econometrics at Brown</li>
+								<li>I led professional development for music educators across RI based on my work at Brown U</li>
+								<ul>
+									<li>The PD session was about a framework for curriculum development in music.</li>
+									<li>The work was strongly rooted in a combination of cognitive schema theory and neuroscience (specifically related to perception of pitch/rhythm).</li>
+									<li>The goal was to develop lessons that would leverage students' existing cognitive schemas and work back historically into music that was less familiar to the students.</li>
+								</ul>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Selected Work Experience</h3>
+						<ul>
+							<li>Sergeant, U.S. Army - 2006 - 2009</li>
+							<li>Methodology/Research Consultant, Independent - 2010 - 2012</li>
+							<li>Research Associate, The BERC Group - 2012 - 2013</li>
+							<li>Strategic Data Project Data Fellow, Mississippi Department of Education - 2013 - 2015</li>
+							<li>Data Scientist, Minneapolis Public Schools - 2015 - 2016</li>
+							<li>Director of GRAD, Fayette County Public Schools - 2016 - Present</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Developing teams in the Army and in Music</li>
+								<li>Secured endorsements from several major manufacturers while working as a musician (e.g., Trace Elliot, DR Strings, etc...).</li>
+								<li>As a research/methods consultant, I had to work closely with my clients to understand their questions and help them develop the data products needed to meet their goals (e.g., publication, finishing the degree, etc...).</li>
+								<li>At BERC group I reengineered the entire workflow for the major work (e.g., classroom observations) and reduced turn around time from 15-20 minutes per school to 9-12 seconds per school.</li>
+								<li>Also developed webscraper in Python at BERC (related to being an autodidact).</li>
+								<li>In Mississippi I programmed the state's school/district accountability model from ingest to public release.  Used autodidact skill to learn much more about programming/design.</li>
+								<li>While working in Minneapolis, I developed several libraries to improve different aspects of the data analysis workflow (e.g., eda, string data processing/handling, etc...)</li>
+								<li>Because interdisciplinary work seemed to be an extension of jazz composition, it was easy for me to adapt to new situations/contexts in research.</li>
+								<li>The combination of studying Jazz Composition and serving in the Army has also shaped my willingness to adapt to new situations.</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<!-- Dissertation  -->
+				<section data-autoslide="5000">
+					<h2>Statistical Modeling of the Effects of Micro-, Meso-, and Exosystem Poverty on Academic Achievement in Music.</h2>
+					<aside class="notes">
+						<ul>
+							<li>Sharing this work to highlight some experience with econometrics</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h3>Motivation</h3>
+						<ul>
+							<li>Lots of studies have examined secondary and tertiary effects of studying music on non-music outcomes.</li>
+							<li>Lots of studies have also addressed the effects of poverty on student outcomes.</li>
+							<li>Much of the literature about the effects of poverty treats the effect as direct, when we know the effect is indirect.</li>
+							<li>No studies attempted to examine how poverty affects student outcomes in music.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>The study had personal importance to me having studied music in the K-12 and post-secondary side.</li>
+								<li>The information formally released by NAEP indicates substantial performance gaps between ethnoracial groups which was counterintuitive to personal experience.</li>
+								<li>Approached the work from Bronfenbrenner's model of ecological development.</li>
+								<li>Used cognitive psych/neuroscience studies to inform my understanding of how we learn music.</li>
+								<li>Used tools from econometrics to address causal questions.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Methods</h3>
+						<ul style="font-size: 1.5rem !important;">
+							<li>Primarily relied on the restricted use 2008 NAEP Music Assessment data set.</li>
+							<li>Used Geospatial buffers to join data about community/contextual factors to schools and students.</li>
+							<li>Created the instrument-income ratio (IIR) using the average national cost of "school market" musical instruments and estimated weekly income.</li>
+							<li>The IIR was used as an instrumental variable estimator (IVE) for the causal effect of a student having their own instrument on the % of correct responses on assessment.</li>
+							<li>Additionally, the IVE needed to be adjusted for the sampling design and non-response weighting to derive correct inference.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li><strong>The reason why my background to this point is critical to my research is that I view interdisciplinary research as essential in the same way that we learn compositional techniques from multiple genres while studying Jazz Comp to be able to use those genres when/as needed to make the work whole.</strong></li>
+								<li>Need to make it clear how this is related to econometrics</li>
+								<li>Instrument Income Ratio - average instrument price for "school market" instruments.</li>
+								<li>USDA Poverty Thresholds for 2008 and Median Family Income from the Small Area Income and Poverty Estimates set from the Census Bureau</li>
+								<li>Adjusted 2000 dollar amounts using BLS inflation adjustments</li>
+								<li>Used school market instrument price divided by either median family income or poverty threshold (based on qualification for free/reduced price lunch) to estimate the number of weeks of income it would cost to purchase an instrument.</li>
+								<li>Other hypotheses were tested with data that included: </li>
+									<ul>
+										<li>Urban Institute's Arts Community Index Project</li>
+										<li>Occupational Employment Statistics (BLS)</li>
+										<li>Non-Employer Statistics (Census Bureau)</li>
+										<li>County/ZIP Business Patterns (Census Bureau)</li>
+										<li>National Center for Charitable Statistics (UI/NCCS)</li>
+										<li>Common Core of Data Finance, Universe, and Private School Universe Data Sets</li>
+										<li>National Associate for State Arts Agencies Grants Data</li>
+										<li>IPEDS</li>
+									</ul>
+								<li>Didn't know anything about psychometrics at this point which is why I used the % correct responses.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<img src="img/instinc.png" style="width: 70vw !important; height: 80vh !important;"
+							 alt="US Map showing Instrument to Income Ratio Across the US.">
+						<aside class="notes">
+							<ul>
+								<li>This illustrates the instrument income ratio at the county level across the US.</li>
+								<li></li>
+								<li></li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Results</h3>
+						<ul>
+							<li>Once the effect of having an instrument is included any differences related to sex and ethnoracial identity shrink to zero.</li>
+							<li>Having their own instrument increased correct responses on the NAEP assessment by 30%.</li>
+							<li>Illustrated how poverty affects student outcomes by restricting access to resources that are important for students to learn.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Study illustrates how access to technology affects learning outcomes even when the technology is indirectly related to the measured outcome.</li>
+								<li>The dissertation also included recommendations for policy focused on solutions to providing students with access to instruments with limited marginal expenditure for LEAs and SEAs</li>
+								<li>In the broader concept of technology, instruments are technology used to produce music.</li>
+
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<!-- This will be the section for the SDP Capstone/Work -->
+				<section data-autoslide="5000">
+					<h2>Meta Matters: Leveraging Metadata to Improve Data Use and Effectiveness</h2>
+					<aside class="notes">
+						<ul>
+							<li>Sharing this work since it can generalize to understanding how students are using learning platforms.</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h3>Motivation</h3>
+						<ul style="font-size: 1.5rem !important;">
+							<li>Means, Padilla, & Gallagher (2010) and Means, Chen, DeBarger, & Padilla (2011) had identified using student data systems to improve education as a national priority in 2010.</li>
+							<li>Topol et al. (2012) estimated that spending on IT in the K-12 sector in the US would hit $4.7B by 2015 with continued growth after that.</li>
+							<li>Despite the importance, not much was known about the types of data consumers within LEAs/SEAs.</li>
+							<li>More important, how could SEAs and LEAs make informed decisions about significant investments without understanding use/adoption and understanding the types of data consumers within their organizations?</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Connection to Dr Means wasn't completely clear until I started rereading the report that my team and I put together and I saw that we cited her work in the first paragraph of the document.</li>
+								<li>Knowing the types, or classes, of data consumers allows organizations to more effectively and efficiently target support and mentoring by differentiation.</li>
+								<li>This was particularly important for FCPS at the time since they were determining whether or not to renew a contract worth roughly $300k/year at the time.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Methods</h3>
+						<ul>
+							<li>Fitted single and multi-level latent class models with and without covariates.</li>
+							<li>Evaluated models that included between two and five latent classes.</li>
+							<li>We used AIC/BIC and Entropy to evaluate model fit.</li>
+							<li>After classifying users we estimated correlations between the proportion of staff in each class at a school and accountability metrics.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>We approached the research from an exploratory perspective where we would fit multiple models to identify candidates for future confirmatory purposes.</li>
+								<li>All covariates were between user covariates.</li>
+								<li>Only between subject latent classes were allowed to vary in the multi-level model.</li>
+								<li>We also fitted the models including and excluding non-users.  Inference about the number of classes was the same regardless of their inclusion.</li>
+								<li>Celeux & Soromenho (1996) state that entropy values approaching 1 indicate clear separation of classes.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Results</h3>
+						<ul>
+							<li>The retained model used five between user classes and had an entropy of 0.964.</li>
+							<li>There were some covariate issues with class membership (e.g., total number of days the system was used and elementary vs non-elementary school users)</li>
+							<li>There were weak correlations between accountability system measures and proportions of staff in each class.</li>
+							<li>When presenting our work to our Strategic Data Project Colleagues we also illustrated near real-time EDA using process data.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>While the slide deck was being projected, we had audience members come up to a separate laptop that was networked to our main laptop.</li>
+								<li>They were able to interact with a dashboard that I created to display accountability system data in Mississippi.</li>
+								<li>At the conclusion of our slide deck, we were able to switch our display to Kibana and explain how we were able to ingest and process all of the user activity data and display the activity in near real-time.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<div id="metaMatters1" style="width: 90vw !important; height: 80vh !important;"></div>
+					</section>
+					<section>
+						<div id="metaMatters2" style="width: 85vw !important; height: 80vh !important;"></div>
+					</section>
+					<section>
+						<div id="metaMatters3" style="width: 90vw !important; height: 80vh !important;"></div>
+					</section>
+					<section>
+						<div id="metaMatters4" style="width: 85vw !important; height: 80vh !important;"></div>
+					</section>
+					<section>
+						<div id="metaMatters5" style="width: 90vw !important; height: 80vh !important;"></div>
+					</section>
+				</section>
+
+				<!-- FCPS Dashboard Work -->
+				<section data-autoslide="5000">
+					<h2>FCPS Data Warehouse, BI, &amp; Predictive Analytics Work</h2>
+					<aside class="notes">
+						<ul>
+							<li>Sharing as an example of supporting improvement science efforts.</li>
+						</ul>
+					</aside>
+				</section>
+				<section>
+					<section>
+						<h3>Purpose</h3>
+						<ul>
+							<li>Support a broader continuous improvement effort through self-service analytics solution.</li>
+							<li>Integrating data across the enterprise into a single architecture to facilitate analysis.</li>
+							<li>Develop the necessary infrastructure needed to support research and evaluation efforts.</li>
+							<li>Shift the organizational focus on using data to prediction and prevention of issues as opposed to response and recovery.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Mention relationships with vendors, etc...</li>
+								<li>Use a hybrid deployment with the DEV environment housed on prem and PROD environment served up on AWS.</li>
+								<li>Developed a team around this work over the past few years</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Work To Date</h3>
+						<ul>
+							<li>Deployed self-service analytics solution to approximately 6,500 staff members.</li>
+							<li>Established informal Research Practice Partnership with local IHE.</li>
+							<li>Pursuing funding to use gamification techniques to increase use/adoption with classroom educators.</li>
+							<li>Solved issues with Value-Added Model stability between years using interim assessments.</li>
+							<li>Currently developing/training predictive models for post-secondary outcomes.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Arriving at FCPS there were two staff members that worked with data for analytic purposes.</li>
+								<li>VAM estimates were correlated with single year lag at >= 0.92 and with a two-year lag at >= 0.81.</li>
+								<li>Budget and staff constraints often shift the focus of the work away from predictive modeling/analytics.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<img src="img/bindInformationEx1.png" style="width: 90vw; height: 80vh;" alt="Example of Fayette County Public Schools' data dashboard including the click for additional info illustrating binding info to visualization.">
+						<aside class="notes">
+							<ul>
+								<li>Each graph in our dashboard environment has one of these click here for additional info icons.</li>
+								<li>This is how we bind information to all of the visualizations.</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/bindInformationEx2.png" style="width: 90vw; height: 80vh;" alt="Example of Fayette County Public Schools' data dashboard after user clicks on the click for additional info element in the user interface.">
+						<aside class="notes">
+							<ul>
+								<li>This shows what the end user sees when they first click on the element.</li>
+								<li>We decided to make a tradeoff between expanding all the information by default and collapsing it.</li>
+								<li>The one section that is always available are the external resources that they can scroll to see.</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/bindInformationEx3.png" style="width: 90vw; height: 80vh;" alt="Example of Fayette County Public Schools' data dashboard after the user clicks on the click for additional info element and expands the what story is this chart telling section.">
+						<aside class="notes">
+							<ul>
+								<li>If its likely that some users may not interpret the graph consistently, give them some type of summary about what the general idea behind the graph is.</li>
+								<li>The summary doesn't need to be explicit, but can be a bit abstract to get the user some general parameters to use for interpretation.</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/bindInformationEx4.png" style="width: 90vw; height: 80vh;" alt="Example of Fayette County Public Schools' data dashboard after the user clicks on the click for additional info element and expands the how to use these data section.">
+						<aside class="notes">
+							<ul>
+								<li>We also provide some bounds to explain what reasonable and unreasonable interpretations of the visualizations could look like.</li>
+								<li>Having end points to reference like this can help end users guage how far away their interpretation is from either of the poles.</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img src="img/bindInformationEx5.png" style="width: 90vw; height: 80vh;" alt="Example of Fayette County Public Schools' data dashboard showing how external resources can also be bound to the visualization.">
+						<aside class="notes">
+							<ul>
+								<li>The external resources can help to make your visualizations more broadly useful since it can centralize knowledge/information locations.</li>
+								<li>I only pick on WIDA because their website can be challenging to navigate quickly/easily and educators rarely have loads of time to spare searching for materials when communicating with families/stakeholders.</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<!-- Roxy's Dissertation Studies -->
+				<section>
+					<section>
+						<h2>How does reliability affect inferences about predictive validity claims</h2>
+					</section>
+					<section>
+						<h3>Motivation</h3>
+						<ul>
+							<li>Several states have adopted "kindergarten readiness" measures to use for early childhood education accountability.</li>
+							<li>These measures tend to be less psychometrically rigorous than other measures used for accountability purposes.</li>
+							<li>Given the nature of "kindergarten readiness" it would be reasonable to assume that there would be substantial evidence of the predictive validity of these measures.</li>
+							<li>How does the reliability, or lack thereof, affect predictive validity claims?</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Using sample from Kentucky which uses the Brigance Assessment</li>
+								<li>Reliability of the measure is lowest for the age group it is primarily used with.</li>
+								<li>CFA discussed in the technical manual indicates the theoretical model doesn't fit the data of the measure.</li>
+								<li>Since covariate measurement error biases parameter estimates, how much are the claims really supported by the data if they don't adjust for covariate measurement error?</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>Methods</h3>
+						<ul>
+							<li>We are using Bayesian Multi-Level Models for a couple reasons:</li>
+							<ul>
+								<li>Reliabilities were estimated with an unreasonably small sample.</li>
+								<li>In addition to modeling the variance components, we can also adjust for covariate measurement error simultaneously.</li>
+								<li>Unlike frequentist approach, Bayesian approach does not require us to treat the published reliability as the true population reliability.</li>
+							</ul>
+							<li>Additionally, Bayesian methods provide a way to avoid issues with solutions that lie along the boundary of the solution space.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>This work is currently being reviewed and no results are available yet.</li>
+								<li>If adjusting for the reliability of the measures affects inference, should that lead to a shift in policy and/or prevent others from adopting the same policy?</li>
+								<li>While there is a lot known about the effect of covariate measurement error models for a single covariate measured with error, much less is known about multiple covariates measured with error.</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<h2>Questions</h2>
+				</section>
+
+				<section>
+					<section>
+						<h3>Other Work Related to Position with Digital Promise</h3>
+						<ul style="font-size: 1.75rem;">
+							<li><a href="https://wbuchanan.github.io/kaacSlideDeck/" target="_blank">Led workshop for KY educators on Item Response Theory using open source tools.</a></li>
+							<li><a href="https://wbuchanan.github.io/sdpDataMining/" target="_blank">Led workshop for Strategic Data Project on Data Mining techniques for text and process data.</a></li>
+							<li><a href="https://wbuchanan.github.io/nnerppDataVisualization/" target="_blank">Led workshop for National Network of Education Research Practice Partnerships on data visualization</a></li>
+							<li><a href="https://education.ky.gov/AA/Acct/Documents/USED%20dclstateassessments2017%202017_01_06.pdf#page=4" target="_blank">Served as State Assessment Peer Reviewer for USED</a></li>
+							<li>Co-Chair the Results Reporting &amp; Management Task-Force, member of the QTI workgroup, member of the State Assessment Innovation Leadership Network, Assessment Product Steering Committee Member, &amp; K-12 Executive Board Member in IMS Global Learning Consortium.</li>
+							<li>Co-Chair of the Reporting &amp; Visualization Work Group, member of the Data Governance Collaborative/Effective Assessment Data Management work groups, member of the Assessment Work Group, &amp; Governance Advisory Team member in the Ed-Fi community.</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Showed examples of using jMetrik for item calibration and explained what item characteristic curves are used to illustrate.</li>
+								<li>Most examples in the SDP workshop were related to monitoring and mining legislative data related to education.</li>
+								<li>NNERPP talk was about principals of data visualization and included some interactive elements to engage the audience in the discussion.</li>
+								<li>On the team to which I was assigned, my focus in the assessment peer review was primarily on the psychometric qualities of the proposed measures.</li>
+							</ul>
+						</aside>
+					</section>
+					<section>
+						<h3>References</h3>
+						<p><a href="http://sdp.cepr.harvard.edu/files/cepr-sdp/files/metamattersreport.pdf?m=1450111805" target="_blank">Deffendall, L., Han, L., & Buchanan, W. R. (2015).  <em>Meta matters: Leveraging metadata to improve data use and effectiveness</em>> (Strategic Data Project Fellowship Capstone Reports). Center for Education Policy Research at Harvard University.  http://sdp.cepr.harvard.edu/files/cepr-sdp/files/metamattersreport.pdf?m=1450111805</a></p>
+						<p>Buchanan, W. R. (2011). <em>Statistical modeling of the effects of micro-, meso-, and exosystem poverty on academic achievement in music</em> [Doctoral Dissertation, TUI University]. Pawtucket, RI: Performing Arts & Creative Education Solutions Consulting.</p>
+						<p>Buchanan, W. R. (2019).  <em>Guiding principles for effective data visualization</em>. Presented to the National Network of Education Research Practice Partnerships. <a href="https://bit.ly/2MFU9kn" target="_blank">https://bit.ly/2MFU9kn</a>.</p>
+					</section>
+				</section>
+
+
 			</div>
 		</div>
 
+		<script type="text/javascript" src="js/metaMatters1.js"></script>
+		<script type="text/javascript" src="js/metaMatters2.js"></script>
+		<script type="text/javascript" src="js/metaMatters3.js"></script>
+		<script type="text/javascript" src="js/metaMatters4.js"></script>
+		<script type="text/javascript" src="js/metaMatters5.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
@@ -37,13 +508,43 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
+				controlsTutorial: false,
+				controlsLayout: 'edges',
+				controlsBackArrows: 'faded',
+				keyboard: true,
+				loop: false,
+				help: true,
+				showNotes: false,
+				progress: false,
+				history: true,
+				center: true,
+				overview: true,
+				touch: true,
+				autoSlideStoppable: true,
+				defaultTiming: 120,
+				hideCursorTime: 2500,
+				display: 'block',
+				viewDistance: 7,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				transitionSpeed: 'slow',
+				backgroundTransition: 'fade',
+				width: "100%",
+				height: "100%",
+				margin: 0.1,
+				minScale: 1,
+				maxScale: 1,				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
 		</script>
+
 	</body>
 </html>
