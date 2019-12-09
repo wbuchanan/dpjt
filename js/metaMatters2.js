@@ -1,4 +1,5 @@
-new Dygraph(document.getElementById("metaMatters4"), "data/Class_By_RIT.csv",
+function drawGraph2() {
+    new Dygraph(document.getElementById("metaMatters4"), "data/Class_By_RIT.csv",
     {
         "axes" : {
             "x" : {
@@ -82,5 +83,7 @@ new Dygraph(document.getElementById("metaMatters4"), "data/Class_By_RIT.csv",
         "hideOverlayOnMouseOut" : true,
         "titleHeight" : 56
 
-    }
-);
+    });
+}
+
+drawGraph2();

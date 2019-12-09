@@ -1,4 +1,5 @@
-new Dygraph(document.getElementById("metaMatters5"), "data/Class_Reports.csv",
+function drawGraph3() {
+    new Dygraph(document.getElementById("metaMatters5"), "data/Class_Reports.csv",
     {
         "axes" : {
             "x" : {
@@ -82,5 +83,7 @@ new Dygraph(document.getElementById("metaMatters5"), "data/Class_Reports.csv",
         "hideOverlayOnMouseOut" : true,
         "titleHeight" : 56
 
-    }
-);
+    });
+}
+
+drawGraph3();

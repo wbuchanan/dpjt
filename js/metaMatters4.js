@@ -1,4 +1,5 @@
-new Dygraph(document.getElementById("metaMatters2"), "data/Student_Goal_Setting_Worksheet.csv",
+function drawGraph4() {
+    new Dygraph(document.getElementById("metaMatters2"), "data/Student_Goal_Setting_Worksheet.csv",
     {
         "axes" : {
             "x" : {
@@ -82,5 +83,7 @@ new Dygraph(document.getElementById("metaMatters2"), "data/Student_Goal_Setting_
         "hideOverlayOnMouseOut" : true,
         "titleHeight" : 56
 
-    }
-);
+    });
+}
+
+drawGraph4();

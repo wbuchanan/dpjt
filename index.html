@@ -40,13 +40,13 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
+				<section id="titleSlide" style="width: 90vw !important; height: 80vh !important;">
 					<h2>Why?</h2>
 					<h3>An Unexpected Journey</h3><br>
 					<h4><a href="https://github.com/wbuchanan" target="_blank">William R. Buchanan, Ph.D.</a></h4>
 				</section>
 				<section>
-					<section data-autoslide="5000">
+					<section data-autoslide="5000" id="outlineTitle" style="width: 90vw !important; height: 80vh !important;">
 						<h3>Outline</h3>
 					</section>
 					<section>
@@ -282,19 +282,19 @@
 						</aside>
 					</section>
 					<section>
-						<div id="metaMatters1" style="width: 90vw !important; height: 80vh !important;"></div>
+						<div id="metaMatters1" style="width: 85vw !important; height: 80vh !important;" data-state="resize1"></div>
 					</section>
 					<section>
-						<div id="metaMatters2" style="width: 85vw !important; height: 80vh !important;"></div>
+						<div id="metaMatters2" style="width: 85vw !important; height: 80vh !important;" data-state="resize2"></div>
 					</section>
 					<section>
-						<div id="metaMatters3" style="width: 90vw !important; height: 80vh !important;"></div>
+						<div id="metaMatters3" style="width: 90vw !important; height: 80vh !important;" data-state="resize3"></div>
 					</section>
 					<section>
-						<div id="metaMatters4" style="width: 85vw !important; height: 80vh !important;"></div>
+						<div id="metaMatters4" style="width: 85vw !important; height: 80vh !important;" data-state="resize4"></div>
 					</section>
 					<section>
-						<div id="metaMatters5" style="width: 90vw !important; height: 80vh !important;"></div>
+						<div id="metaMatters5" style="width: 90vw !important; height: 80vh !important;" data-state="resize5"></div>
 					</section>
 				</section>
 
@@ -471,15 +471,10 @@
 
 			</div>
 		</div>
-
-		<script type="text/javascript" src="js/metaMatters1.js"></script>
-		<script type="text/javascript" src="js/metaMatters2.js"></script>
-		<script type="text/javascript" src="js/metaMatters3.js"></script>
-		<script type="text/javascript" src="js/metaMatters4.js"></script>
-		<script type="text/javascript" src="js/metaMatters5.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
+
 			// More info about config & dependencies:
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
@@ -520,7 +515,31 @@
 					{ src: 'plugin/math/math.js', async: true }
 				]
 			});
+
+			// Using slide change event to dispatch a UI event that makes the browser think the browser was resized.
+			// Based on a solution provided at https://groups.google.com/forum/m/#!topic/dygraphs-users/ca53q-4uZ7s
+			// Creating the evt variable with global scope to avoid generating the variable and populating it with
+			// the same data after every slide change event.
+			var evt = document.createEvent('UIEvents');
+			evt.initUIEvent('resize', true, false, window, 0);
+
+			// Use the slide change event listener to dispatch a window event that "resizes" the window.
+			// Because the hidden slides have height and width of size 0 the graphs ordinarily would not render properly
+			// until the browser window was resized.  Dispatching this event on the slide change event listener handles
+			// this automatically so the end user doesn't need to resize the browser manually.
+			Reveal.addEventListener( 'slidechanged', function(event) {
+				// This will trigger dygraphs to be redrawn and will appear on the slide transition
+				window.dispatchEvent(evt);
+			}, false );
 		</script>
 
 	</body>
+	<footer>
+		<script type="text/javascript" src="js/resizer.js"></script>
+		<script type="text/javascript" src="js/metaMatters1.js"></script>
+		<script type="text/javascript" src="js/metaMatters2.js"></script>
+		<script type="text/javascript" src="js/metaMatters3.js"></script>
+		<script type="text/javascript" src="js/metaMatters4.js"></script>
+		<script type="text/javascript" src="js/metaMatters5.js"></script>
+	</footer>
 </html>
